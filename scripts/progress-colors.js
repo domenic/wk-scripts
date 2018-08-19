@@ -4,6 +4,7 @@
 // @version     1.0.0
 // @author      Domenic Denicola
 // @description Changes the progress colors so that they are different from the kanji and vocab colours
+// @license     MIT
 // @homepageURL https://github.com/domenic/wk-scripts/blob/master/changelogs/progress-colors.md
 // @downloadURL https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/progress-colors.js
 // @updateURL   https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/progress-colors.js

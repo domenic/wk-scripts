@@ -4,6 +4,7 @@
 // @version     1.0.0
 // @author      Domenic Denicola
 // @description Shows the real number of lessons and reviews, instead of 42+
+// @license     MIT
 // @homepageURL https://github.com/domenic/wk-scripts/blob/master/changelogs/real-numbers.md
 // @downloadURL https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/real-numbers.js
 // @updateURL   https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/real-numbers.js
