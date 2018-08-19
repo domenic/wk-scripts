@@ -1,0 +1,14 @@
+{
+  "name": "wk-scripts",
+  "private": true,
+  "description": "Domenic's WaniKani userscripts",
+  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
+  "repository": "domenic/wk-scripts",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.4.0"
+  },
+  "scripts": {
+    "lint": "eslint scripts"
+  }
+}
