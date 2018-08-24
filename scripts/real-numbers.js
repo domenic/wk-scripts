@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        WaniKani Real Numbers
 // @namespace   https://github.com/domenic/wk-scripts
-// @version     1.0.0
+// @version     1.0.1
 // @author      Domenic Denicola
 // @description Shows the real number of lessons and reviews, instead of 42+
 // @license     MIT
@@ -78,7 +78,7 @@ function getAPIKey() {
     return apiKeyFromStorage;
   }
 
-  if (window.location.href.includes("/account")) {
+  if (window.location.href.includes("/settings/account")) {
     const apiKeyFromPage = document.getElementById("user_api_key").value;
 
     if (!apiKeyFromPage) {
@@ -93,7 +93,7 @@ function getAPIKey() {
 
     return apiKeyFromPage;
   } else if (!window.location.href.includes(REDIRECT_SIGNAL_SUFFIX)) { // Avoid infinite looping back and forth
-    window.location = "/account" + REDIRECT_SIGNAL_SUFFIX;
+    window.location = "/settings/account" + REDIRECT_SIGNAL_SUFFIX;
   }
 
   return null;
