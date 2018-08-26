@@ -1,5 +1,9 @@
 # WaniKani Real Numbers Changelog
 
+## 1.0.2
+
+* When an invalid (e.g. old) API key was stored, WaniKani Real Numbers now clears the API key so that future reloads get a new one.
+
 ## 1.0.1
 
 * Fixed an error in the initial API key acquisition flow that would result in 404s.

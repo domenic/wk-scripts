@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        WaniKani Real Numbers
 // @namespace   https://github.com/domenic/wk-scripts
-// @version     1.0.1
+// @version     1.0.2
 // @author      Domenic Denicola
 // @description Shows the real number of lessons and reviews, instead of 42+
 // @license     MIT
@@ -58,7 +58,12 @@ const REDIRECT_SIGNAL_SUFFIX = "?redirected-by-wk-real-numbers";
 })();
 
 async function getData(apiKey) {
-  const json = await (await fetch(`/api/user/${apiKey}/study-queue`)).json();
+  const res = await fetch(`/api/user/${apiKey}/study-queue`);
+  if (!res.ok) {
+    localStorage.removeItem("apiKey");
+    throw new Error(`API call resulted in ${res.status} status`);
+  }
+  const json = await res.json();
 
   if (json.error) {
     throw new Error("API error: " + json.error.message);
