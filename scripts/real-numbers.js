@@ -24,13 +24,11 @@ const API_KEY_LENGTH = 32;
   const reviewsEl = document.querySelector(".reviews span");
 
   if (!lessonsEl || !reviewsEl) {
-    // Not on a page that displays these.
     console.debug("[WK real numbers] Not on a page that displays lesson/review numbers.");
     return;
   }
 
   if (lessonsEl.textContent !== FAKE_NUMBER && reviewsEl.textContent !== FAKE_NUMBER) {
-    // Numbers are real, so no need to do anything.
     console.debug("[WK real numbers] Numbers are real already so no need to do anything.");
     return;
   }
