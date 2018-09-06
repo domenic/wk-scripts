@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        WaniKani Real Numbers
 // @namespace   https://github.com/domenic/wk-scripts
-// @version     1.0.2
+// @version     1.1.0
 // @author      Domenic Denicola
 // @description Shows the real number of lessons and reviews, instead of 42+
 // @license     MIT
@@ -17,7 +17,7 @@
 "use strict";
 
 const FAKE_NUMBER = "42+";
-const REDIRECT_SIGNAL_SUFFIX = "?redirected-by-wk-real-numbers";
+const API_KEY_LENGTH = 32;
 
 (async () => {
   const lessonsEl = document.querySelector(".lessons span");
@@ -44,7 +44,7 @@ const REDIRECT_SIGNAL_SUFFIX = "?redirected-by-wk-real-numbers";
   reviewsEl.textContent = "";
 
   try {
-    const apiKey = getAPIKey();
+    const apiKey = await getAPIKey();
     console.debug(`[WK real numbers] API key is ${apiKey}.`);
 
     const { lessons, reviews } = await getData(apiKey);
@@ -75,31 +75,28 @@ async function getData(apiKey) {
   };
 }
 
-// Hmm. Could we use iframes?
-// Original version did confirm() before redirecting you. Is that a good idea?
-function getAPIKey() {
+async function getAPIKey() {
   const apiKeyFromStorage = localStorage.getItem("apiKey");
   if (apiKeyFromStorage) {
     return apiKeyFromStorage;
   }
 
-  if (window.location.href.includes("/settings/account")) {
-    const apiKeyFromPage = document.getElementById("user_api_key").value;
+  console.debug("[WK real numbers] API key not stored; fetching it.");
+  const accountRes = await fetch("/settings/account");
+  if (!accountRes.ok) {
+    throw new Error(`Fetching the account page gave a ${accountRes.status} status`);
+  }
+  const accountDocument = parseDocument(await accountRes.text());
+  const apiKey = accountDocument.querySelector("#user_api_key").value;
 
-    if (!apiKeyFromPage) {
-      throw new Error("Could not find the API key on the account page. Be sure you have generated one!");
-    }
-
-    localStorage.setItem("apiKey", apiKeyFromPage);
-
-    if (window.location.href.includes(REDIRECT_SIGNAL_SUFFIX)) {
-      window.location = "/dashboard" + REDIRECT_SIGNAL_SUFFIX;
-    }
-
-    return apiKeyFromPage;
-  } else if (!window.location.href.includes(REDIRECT_SIGNAL_SUFFIX)) { // Avoid infinite looping back and forth
-    window.location = "/settings/account" + REDIRECT_SIGNAL_SUFFIX;
+  if (typeof apiKey !== "string" || apiKey.length !== API_KEY_LENGTH) {
+    throw new Error("Failed to get API key from the account page");
   }
 
-  return null;
+  localStorage.setItem("apiKey", apiKey);
+  return apiKey;
+}
+
+function parseDocument(string) {
+  return (new DOMParser()).parseFromString(string, "text/html");
 }

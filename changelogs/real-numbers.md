@@ -1,5 +1,9 @@
 # WaniKani Real Numbers Changelog
 
+## 1.1.0
+
+* Revamped the method of retrieving the API key to not involve user-visible redirects.
+
 ## 1.0.2
 
 * When an invalid (e.g. old) API key was stored, WaniKani Real Numbers now clears the API key so that future reloads get a new one.
