@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name        WaniKani Progress Colors
 // @namespace   https://github.com/domenic/wk-scripts
-// @version     1.0.0
+// @version     1.0.1
 // @author      Domenic Denicola
-// @description Changes the progress colors so that they are different from the kanji and vocab colours
+// @description Changes the progress colors so that they are different from the kanji and vocab colors
 // @license     MIT
 // @homepageURL https://github.com/domenic/wk-scripts/blob/master/changelogs/progress-colors.md
 // @downloadURL https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/progress-colors.js
