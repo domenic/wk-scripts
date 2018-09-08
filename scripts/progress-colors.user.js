@@ -6,8 +6,8 @@
 // @description Changes the progress colors so that they are different from the kanji and vocab colors
 // @license     MIT
 // @homepageURL https://github.com/domenic/wk-scripts/blob/master/changelogs/progress-colors.md
-// @downloadURL https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/progress-colors.js
-// @updateURL   https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/progress-colors.js
+// @downloadURL https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/progress-colors.user.js
+// @updateURL   https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/progress-colors.user.js
 // @supportURL  https://github.com/domenic/wk-scripts/issues
 // @match       https://www.wanikani.com/*
 // @match       https://www.wkstats.com/*

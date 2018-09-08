@@ -6,8 +6,8 @@
 // @description Displays the breakdown within Apprentice and Guru levels on the dashboard
 // @license     MIT
 // @homepageURL https://github.com/domenic/wk-scripts/blob/master/changelogs/level-breakdown.md
-// @downloadURL https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/level-breakdown.js
-// @updateURL   https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/level-breakdown.js
+// @downloadURL https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/level-breakdown.user.js
+// @updateURL   https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/level-breakdown.user.js
 // @supportURL  https://github.com/domenic/wk-scripts/issues
 // @require     https://raw.githubusercontent.com/domenic/wk-scripts/master/helpers/api.js
 // @match       https://www.wanikani.com/dashboard

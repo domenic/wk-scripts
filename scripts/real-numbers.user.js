@@ -6,8 +6,8 @@
 // @description Shows the real number of lessons and reviews, instead of 42+
 // @license     MIT
 // @homepageURL https://github.com/domenic/wk-scripts/blob/master/changelogs/real-numbers.md
-// @downloadURL https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/real-numbers.js
-// @updateURL   https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/real-numbers.js
+// @downloadURL https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/real-numbers.user.js
+// @updateURL   https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/real-numbers.user.js
 // @supportURL  https://github.com/domenic/wk-scripts/issues
 // @require     https://raw.githubusercontent.com/domenic/wk-scripts/master/helpers/api.js
 // @match       https://www.wanikani.com/*
