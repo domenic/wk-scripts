@@ -1,6 +1,7 @@
 ---
 root: true
 env:
+  es6: true
   browser: true
   greasemonkey: true
 parserOptions:
@@ -79,7 +80,7 @@ rules:
   no-labels: [error, allowLoop: true]
   no-lone-blocks: error
   no-loop-func: error
-  no-magic-numbers: error
+  no-magic-numbers: [error, { ignore: [0] }]
   no-multi-spaces: error
   no-multi-str: error
   no-new: error
