@@ -1,5 +1,13 @@
 # WaniKani Real Numbers Changelog
 
+## 1.2.0
+
+* Ensured that the real numbers are always up to date, by refreshing them on the hour and whenever you switch back to the tab.
+
+## 1.1.1
+
+* Fixed misspelling of "colors" in the description.
+
 ## 1.1.0
 
 * Revamped the method of retrieving the API key to not involve user-visible redirects.
