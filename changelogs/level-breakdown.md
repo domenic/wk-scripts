@@ -1,5 +1,9 @@
 # WaniKani Level Breakdown Changelog
 
+## 1.0.1
+
+* Made the script also run on `https://wanikani.com/`, not just `https://wanikani.com/dashboard`, since the pages are apparently the same.
+
 ## 1.0.0
 
 Inspired by [WaniKani SRS Level Progress](https://greasyfork.org/en/scripts/32344-wanikani-srs-level-progress), which has stopped working recently due to its dependency on https://wanikanitools-golang.curiousattemptbunny.com/.

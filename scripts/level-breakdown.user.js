@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        WaniKani Level Breakdown
 // @namespace   https://github.com/domenic/wk-scripts
-// @version     1.0.0
+// @version     1.0.1
 // @author      Domenic Denicola
 // @description Displays the breakdown within Apprentice and Guru levels on the dashboard
 // @license     MIT
@@ -10,6 +10,7 @@
 // @updateURL   https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/level-breakdown.user.js
 // @supportURL  https://github.com/domenic/wk-scripts/issues
 // @require     https://raw.githubusercontent.com/domenic/wk-scripts/master/helpers/api.js
+// @match       https://www.wanikani.com/
 // @match       https://www.wanikani.com/dashboard
 // @run-at      document-end
 // @grant       none
