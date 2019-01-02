@@ -34,7 +34,9 @@ for (const { level, short, color, gradientColor } of levels) {
     .dashboard section.srs-progress ul li:nth-child(${ordinal}),
     .${level}-lattice,
     .lattice-single-character .${level}-lattice,
-    .lattice-multi-character .${level}-lattice
+    .lattice-multi-character .${level}-lattice,
+    #timeline .review_info[data-mode="srs_stage"] .${short},
+    #pg_items.fast .${short}
     {
       background: linear-gradient(-45deg, ${gradientColor}, ${color});
     }
@@ -42,14 +44,6 @@ for (const { level, short, color, gradientColor } of levels) {
     #timeline svg .${short}
     {
       fill: ${color} !important;
-    }
-    #timeline .review_info[data-mode="srs_stage"] .${short}
-    {
-      background: linear-gradient(-45deg, ${gradientColor}, ${color});
-    }
-
-    #pg_items.fast .${short} {
-      background: linear-gradient(-45deg, ${gradientColor}, ${color});
     }
   `;
   ++ordinal;
