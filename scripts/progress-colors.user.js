@@ -22,10 +22,9 @@ const levels = [
   { level: "apprentice", short: "appr", color: "#D01916", gradientColor: "#CD1818" },
   { level: "guru", short: "guru", color: "#D07616", gradientColor: "#AD6818" },
   { level: "master", short: "mast", color: "#D0CA16", gradientColor: "#ADAD18" },
-  { level: "enlighten", short: "enli", color: "#73D016", gradientColor: "#63AD18" }
+  { level: "enlighten", short: "enli", color: "#73D016", gradientColor: "#63AD18" },
+  { level: "burned", short: "burn", color: "#FDDE9B", gradientColor: "#FAAC05" }
 ];
-// We leave "Burned" as-is.
-// TODO: wkstats uses different burned color than WK itself; harmonize?
 
 let rules = "";
 
