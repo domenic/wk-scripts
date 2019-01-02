@@ -59,17 +59,3 @@ for (const { level, short, color, gradientColor } of levels) {
 
 style.textContent = rules;
 document.body.appendChild(style);
-
-// TODO: reinstate this percentage recoloring?
-// addGlobalStyle('.percentage-0-20 { background-color: #d21414; }');
-// addGlobalStyle('.percentage-21-40 { background-color: #d27614; }');
-// addGlobalStyle('.percentage-41-60 { background-color: #d2cc14; }');
-// addGlobalStyle('.percentage-61-80 { background-color: #99d214; }');
-// addGlobalStyle('.percentage-81-100 { background-color: #46d214; }');
-
-/* eslint-disable max-len */
-// addGlobalStyle('.lattice-single-character .percentage-0-20, .lattice-multi-character .percentage-0-20 { background-color: #d21414; }');
-// addGlobalStyle('.lattice-single-character .percentage-21-40, .lattice-multi-character .percentage-21-40 { background-color: #d27614; }');
-// addGlobalStyle('.lattice-single-character .percentage-41-60, .lattice-multi-character .percentage-41-60 { background-color: #d2cc14; }');
-// addGlobalStyle('.lattice-single-character .percentage-61-80, .lattice-multi-character .percentage-61-80 { background-color: #99d214; }');
-// addGlobalStyle('.lattice-single-character .percentage-81-100, .lattice-multi-character .percentage-81-100 { background-color: #46d214; }');
