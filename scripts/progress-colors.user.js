@@ -11,6 +11,7 @@
 // @supportURL  https://github.com/domenic/wk-scripts/issues
 // @match       https://www.wanikani.com/*
 // @match       https://www.wkstats.com/*
+// @match       https://www.wkstats.com:10001/*
 // @run-at      document-end
 // @grant       GM_addStyle
 // @noframes
@@ -36,14 +37,20 @@ for (const { level, short, color, gradientColor } of levels) {
     .lattice-single-character .${level}-lattice,
     .lattice-multi-character .${level}-lattice,
     #timeline .review_info[data-mode="srs_stage"] .${short},
-    #pg_items.fast .${short}
+    #pg_items.fast .${short},
+    .main-content .items[data-color="srs"] .item[data-srs^="${short}"]
     {
-      background: linear-gradient(-45deg, ${gradientColor}, ${color});
+      background: linear-gradient(-45deg, ${gradientColor}, ${color}) !important;
     }
 
     #timeline svg .${short}
     {
       fill: ${color} !important;
+    }
+
+    .main-content .query .enable [name^="${short}"]
+    {
+      border-bottom-color: ${color} !important;
     }
   `;
   ++ordinal;
