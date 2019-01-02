@@ -13,7 +13,7 @@
 // @match       https://www.wanikani.com/
 // @match       https://www.wanikani.com/dashboard
 // @run-at      document-end
-// @grant       none
+// @grant       GM_addStyle
 // @noframes
 // ==/UserScript==
 "use strict";
@@ -25,14 +25,12 @@ const GURU_1 = 5;
 const GURU_2 = 6;
 
 (async () => {
-  const style = document.createElement("style");
-  style.textContent = `.dashboard section.srs-progress span.level-breakdown {
+  GM_addStyle(`.dashboard section.srs-progress span.level-breakdown {
     font-size: 15px;
     font-weight: normal;
     margin: -0.5em 0 0 0;
     text-shadow: none;
-  }`;
-  document.head.appendChild(style);
+  }`);
 
   // Create the containers for all levels, for layout purposes, even if we don't fill them.
   for (const level of ["apprentice", "guru", "master", "enlightened", "burned"]) {

@@ -12,7 +12,7 @@
 // @match       https://www.wanikani.com/*
 // @match       https://www.wkstats.com/*
 // @run-at      document-end
-// @grant       none
+// @grant       GM_addStyle
 // @noframes
 // ==/UserScript==
 "use strict";
@@ -25,8 +25,6 @@ const levels = [
 ];
 // We leave "Burned" as-is.
 // TODO: wkstats uses different burned color than WK itself; harmonize?
-
-const style = document.createElement("style");
 
 let rules = "";
 
@@ -43,7 +41,7 @@ for (const { level, short, color, gradientColor } of levels) {
 
     #timeline svg .${short}
     {
-      fill: ${color};
+      fill: ${color} !important;
     }
     #timeline .review_info[data-mode="srs_stage"] .${short}
     {
@@ -57,5 +55,4 @@ for (const { level, short, color, gradientColor } of levels) {
   ++ordinal;
 }
 
-style.textContent = rules;
-document.body.appendChild(style);
+GM_addStyle(rules);
