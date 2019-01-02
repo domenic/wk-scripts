@@ -1,5 +1,9 @@
 # WaniKani Progress Colors Changelog
 
+## 1.0.1
+
+* Fixed misspelling of "color" in the script's description.
+
 ## 1.0.0
 
 Based on [WaniKani progress colours](https://greasyfork.org/en/scripts/20637-wanikani-progress-colours) by [Chris Ward](https://greasyfork.org/en/users/49379-chris-ward).
