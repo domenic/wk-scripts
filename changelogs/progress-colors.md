@@ -1,5 +1,10 @@
 # WaniKani Progress Colors Changelog
 
+## 1.1.0
+
+* Add support for the [beta wkstats site](https://www.wkstats.com:10001).
+* Made the color for burned a glowing gold (like wkstats) on wanikani.com.
+
 ## 1.0.1
 
 * Fixed misspelling of "color" in the script's description.
