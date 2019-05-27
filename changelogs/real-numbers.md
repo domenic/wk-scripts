@@ -1,5 +1,10 @@
 # WaniKani Real Numbers Changelog
 
+## 2.0.0
+
+* Fixed to work with the new WaniKani redesign, instead of always logging "Not on a page that displays lesson/review numbers."
+* The new WaniKani redesign has gotten rid of the "42+" marker, so the original purpose of this script is obsolete, and that code was deleted. However, the always-up-to-date feature introduced in v1.2.0 remains useful. A more accurate name for the script would be something like "WaniKani Updated Numbers", but that could break auto-updates, so the name stays as-is for now.
+
 ## 1.2.0
 
 * Ensured that the real numbers are always up to date, by refreshing them on the hour and whenever you switch back to the tab.
