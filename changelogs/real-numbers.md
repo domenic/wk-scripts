@@ -6,7 +6,7 @@
 
 ## 1.1.1
 
-* Fixed misspelling of "colors" in the description.
+* Refactored API code into a separate helper script which is shared with other scripts.
 
 ## 1.1.0
 
