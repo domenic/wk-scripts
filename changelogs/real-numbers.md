@@ -1,5 +1,9 @@
 # WaniKani Real Numbers Changelog
 
+## 2.0.1
+
+* Fixed to ensure that the updated review/lesson counts get styled correctly, with different styles for zero vs. nonzero.
+
 ## 2.0.0
 
 * Fixed to work with the new WaniKani redesign, instead of always logging "Not on a page that displays lesson/review numbers."
