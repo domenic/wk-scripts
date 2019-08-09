@@ -1,5 +1,9 @@
 # WaniKani Level Breakdown Changelog
 
+## 1.0.2
+
+* Fixed the API key retrieval code, now that WaniKani moved the API key to a separate page from the main account page.
+
 ## 1.0.1
 
 * Made the script also run on `https://wanikani.com/`, not just `https://wanikani.com/dashboard`, since the pages are apparently the same.

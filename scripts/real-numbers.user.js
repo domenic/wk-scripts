@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        WaniKani Real Numbers
 // @namespace   https://github.com/domenic/wk-scripts
-// @version     2.0.1
+// @version     2.0.2
 // @author      Domenic Denicola
 // @description Shows the always-updated number of lessons and reviews
 // @license     MIT
@@ -9,7 +9,7 @@
 // @downloadURL https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/real-numbers.user.js
 // @updateURL   https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/real-numbers.user.js
 // @supportURL  https://github.com/domenic/wk-scripts/issues
-// @require     https://raw.githubusercontent.com/domenic/wk-scripts/master/helpers/api.js
+// @require     https://raw.githubusercontent.com/domenic/wk-scripts/master/helpers/api.js#v2
 // @match       https://www.wanikani.com/*
 // @run-at      document-end
 // @grant       none

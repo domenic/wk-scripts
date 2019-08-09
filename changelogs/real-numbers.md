@@ -1,5 +1,9 @@
 # WaniKani Real Numbers Changelog
 
+## 2.0.2
+
+* Fixed the API key retrieval code, now that WaniKani moved the API key to a separate page from the main account page.
+
 ## 2.0.1
 
 * Fixed to ensure that the updated review/lesson counts get styled correctly, with different styles for zero vs. nonzero.

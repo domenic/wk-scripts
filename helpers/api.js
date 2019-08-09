@@ -25,9 +25,9 @@ async function getAPIKey() {
   }
 
   console.debug("[WK real numbers] API key not stored; fetching it.");
-  const accountRes = await fetch("/settings/account");
+  const accountRes = await fetch("/settings/personal_access_tokens");
   if (!accountRes.ok) {
-    throw new Error(`Fetching the account page gave a ${accountRes.status} status`);
+    throw new Error(`Fetching the personal access tokens page gave a ${accountRes.status} status`);
   }
   const accountDocument = parseDocument(await accountRes.text());
   const apiKey = accountDocument.querySelector("#user_api_key").value;
