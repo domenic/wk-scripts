@@ -6,6 +6,8 @@ env:
   greasemonkey: true
 parserOptions:
   ecmaVersion: 2018
+globals:
+  answerChecker: readonly
 
 rules:
   # Possible errors
@@ -185,7 +187,7 @@ rules:
   linebreak-style: [error, unix]
   lines-around-comment: off
   max-depth: off
-  max-len: [error, 120, { ignoreUrls: true }]
+  max-len: [error, 120, { ignoreUrls: true, ignoreComments: true }]
   max-lines: off
   max-nested-callbacks: off
   max-params: off
