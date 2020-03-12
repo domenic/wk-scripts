@@ -1,5 +1,9 @@
 # WaniKani Real Numbers Changelog
 
+## 2.0.3
+
+* Fixed to work with the new WaniKani redesign, instead of always logging "Not on a page that displays lesson/review numbers." (Again.)
+
 ## 2.0.2
 
 * Fixed the API key retrieval code, now that WaniKani moved the API key to a separate page from the main account page.

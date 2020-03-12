@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        WaniKani Real Numbers
 // @namespace   https://github.com/domenic/wk-scripts
-// @version     2.0.2
+// @version     2.0.3
 // @author      Domenic Denicola
 // @description Shows the always-updated number of lessons and reviews
 // @license     MIT
@@ -18,8 +18,8 @@
 "use strict";
 
 (() => {
-  const lessonsEl = document.querySelector(".navigation-shortcut--lessons");
-  const reviewsEl = document.querySelector(".navigation-shortcut--reviews");
+  const lessonsEl = document.querySelector(`[class*="lessons-and-reviews__lessons-button--"]`);
+  const reviewsEl = document.querySelector(`[class*="lessons-and-reviews__reviews-button--"]`);
 
   if (!lessonsEl || !reviewsEl) {
     console.debug("[WK real numbers] Not on a page that displays lesson/review numbers.");
