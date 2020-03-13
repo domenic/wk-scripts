@@ -1,5 +1,9 @@
 # WaniKani Real Numbers Changelog
 
+## 2.0.4
+
+* Fixed to also update the lesson/review background images in the new WaniKani redesign, and not just the numbers.
+
 ## 2.0.3
 
 * Fixed to work with the new WaniKani redesign, instead of always logging "Not on a page that displays lesson/review numbers." (Again.)
