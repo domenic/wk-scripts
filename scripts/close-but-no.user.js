@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        WaniKani Close But No
 // @namespace   https://github.com/domenic/wk-scripts
-// @version     1.0.0
+// @version     1.0.1
 // @author      Domenic Denicola
 // @description Prevents WaniKani from accepting close answers, instead re-prompting you to try again until you get it exactly
 // @license     MIT
@@ -19,14 +19,13 @@
 const MESSAGE = "Close, but not quite!";
 
 const oldEvaluate = answerChecker.evaluate;
-answerChecker.evaluate = function (...args) {
-  const result = oldEvaluate.call(this, ...args);
+answerChecker.evaluate = function (type, ...otherArgs) {
+  const result = oldEvaluate.call(this, type, ...otherArgs);
 
-  if (result.passed && !result.accurate) {
+  if (type === "meaning" && result.passed && !result.accurate) {
     result.exception = true;
+    changeExceptionMessageTextWhenItAppears();
   }
-
-  changeExceptionMessageTextWhenItAppears();
 
   return result;
 };
