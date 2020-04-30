@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        WaniKani Real Numbers
 // @namespace   https://github.com/domenic/wk-scripts
-// @version     2.0.4
+// @version     2.0.5
 // @author      Domenic Denicola
 // @description Shows the always-updated number of lessons and reviews
 // @license     MIT
@@ -53,8 +53,8 @@ function applyUpdatesForever() {
 
   const timeFromNow = timeToUpdate - Date.now();
   setTimeout(async () => {
-    await applyUpdate(lessonsEl, reviewsEl);
-    applyUpdatesForever(lessonsEl, reviewsEl);
+    await applyUpdate();
+    applyUpdatesForever();
   }, timeFromNow);
 }
 
@@ -75,7 +75,7 @@ async function applyUpdate() {
 function getClassName(type, number) {
   let theIntervalClassSuffix = 0;
   for (const intervalClassSuffix of intervals[type]) {
-    if (number > intervalClassSuffix) {
+    if (number >= intervalClassSuffix) {
       theIntervalClassSuffix = intervalClassSuffix;
     } else {
       break;

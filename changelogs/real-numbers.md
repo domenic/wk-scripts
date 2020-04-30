@@ -1,5 +1,9 @@
 # WaniKani Real Numbers Changelog
 
+## 2.0.5
+
+* Fixed an issue with the lesson/review background images when the numbers were exactly equal to the relevant threshold, instead of above it.
+
 ## 2.0.4
 
 * Fixed to also update the lesson/review background images in the new WaniKani redesign, and not just the numbers.
