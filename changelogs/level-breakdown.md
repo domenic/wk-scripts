@@ -1,5 +1,9 @@
 # WaniKani Level Breakdown Changelog
 
+## 1.0.3
+
+* Updated to use the WaniKani v2 API, so it now works again.
+
 ## 1.0.2
 
 * Fixed the API key retrieval code, now that WaniKani moved the API key to a separate page from the main account page.

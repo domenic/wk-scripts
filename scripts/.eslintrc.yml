@@ -1,2 +1,2 @@
 globals:
-  getAPIData: false
+  makeAPIRequest: false

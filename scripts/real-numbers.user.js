@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        WaniKani Real Numbers
 // @namespace   https://github.com/domenic/wk-scripts
-// @version     2.0.5
+// @version     2.0.6
 // @author      Domenic Denicola
 // @description Shows the always-updated number of lessons and reviews
 // @license     MIT
@@ -9,7 +9,7 @@
 // @downloadURL https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/real-numbers.user.js
 // @updateURL   https://raw.githubusercontent.com/domenic/wk-scripts/master/scripts/real-numbers.user.js
 // @supportURL  https://github.com/domenic/wk-scripts/issues
-// @require     https://raw.githubusercontent.com/domenic/wk-scripts/master/helpers/api.js#v2
+// @require     https://raw.githubusercontent.com/domenic/wk-scripts/master/helpers/api.js#v3
 // @match       https://www.wanikani.com/*
 // @run-at      document-end
 // @grant       none
@@ -60,13 +60,16 @@ function applyUpdatesForever() {
 
 async function applyUpdate() {
   try {
-    const studyQueue = await getAPIData("study-queue");
+    const [lessons, reviews] = await Promise.all([
+      makeAPIRequest("assignments?immediately_available_for_review"),
+      makeAPIRequest("assignments?immediately_available_for_lessons")
+    ]);
 
-    lessonsEl.className = getClassName("lessons", studyQueue.lessons_available);
-    lessonsEl.dataset.count = lessonsEl.querySelector("span").textContent = studyQueue.lessons_available;
+    lessonsEl.className = getClassName("lessons", lessons.total_count);
+    lessonsEl.dataset.count = lessonsEl.querySelector("span").textContent = lessons.total_count;
 
-    reviewsEl.className = getClassName("reviews", studyQueue.reviews_available);
-    reviewsEl.dataset.count = reviewsEl.querySelector("span").textContent = studyQueue.reviews_available;
+    reviewsEl.className = getClassName("reviews", reviews.total_count);
+    reviewsEl.dataset.count = reviewsEl.querySelector("span").textContent = reviews.total_count;
   } catch (e) {
     console.error("[WK real numbers] " + e.message);
   }
