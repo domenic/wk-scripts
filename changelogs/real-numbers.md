@@ -1,5 +1,9 @@
 # WaniKani Real Numbers Changelog
 
+## 2.0.7
+
+* Fix lessons and review counts being flipped.
+
 ## 2.0.6
 
 * Updated to use the WaniKani v2 API, so it now works again.

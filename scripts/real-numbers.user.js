@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        WaniKani Real Numbers
 // @namespace   https://github.com/domenic/wk-scripts
-// @version     2.0.6
+// @version     2.0.7
 // @author      Domenic Denicola
 // @description Shows the always-updated number of lessons and reviews
 // @license     MIT
@@ -61,8 +61,8 @@ function applyUpdatesForever() {
 async function applyUpdate() {
   try {
     const [lessons, reviews] = await Promise.all([
-      makeAPIRequest("assignments?immediately_available_for_review"),
-      makeAPIRequest("assignments?immediately_available_for_lessons")
+      makeAPIRequest("assignments?immediately_available_for_lessons"),
+      makeAPIRequest("assignments?immediately_available_for_review")
     ]);
 
     lessonsEl.className = getClassName("lessons", lessons.total_count);
