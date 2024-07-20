@@ -1,5 +1,9 @@
 # WaniKani Level Breakdown Changelog
 
+## 1.0.4
+
+* Updated for the new WaniKani layout, so now it works again.
+
 ## 1.0.3
 
 * Updated to use the WaniKani v2 API, so it now works again.

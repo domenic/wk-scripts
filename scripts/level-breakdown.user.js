@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        WaniKani Level Breakdown
 // @namespace   https://github.com/domenic/wk-scripts
-// @version     1.0.3
+// @version     1.0.4
 // @author      Domenic Denicola
 // @description Displays the breakdown within Apprentice and Guru levels on the dashboard
 // @license     MIT
@@ -20,10 +20,11 @@
 
 (async () => {
   GM_addStyle(`.dashboard section.srs-progress span.level-breakdown {
-    font-size: 15px;
-    font-weight: normal;
-    margin: -0.5em 0 0 0;
-    text-shadow: none;
+    display: flex;
+    color: var(--color-srs-progress-text);
+    font-size: var(--font-size-small);
+    margin-block: var(--spacing-xtight);
+    justify-content: center;
   }`);
 
   // Create the containers for all levels, for layout purposes, even if we don't fill them.
@@ -32,12 +33,12 @@
     container.className = "level-breakdown";
     container.textContent = "\xA0"; // nonbreaking space, to ensure it doesn't collapse
 
-    document.querySelector(`#${level} > span`).after(container);
+    levelContainerFromName(level).querySelector(".srs-progress__stage-header").after(container);
   }
 
   const counts = await getCounts();
   for (const [level, levelCounts] of Object.entries(counts)) {
-    const container = document.querySelector(`#${level} > .level-breakdown`);
+    const container = levelContainerFromName(level).querySelector(".level-breakdown");
     container.textContent = levelCounts.join(" / ");
   }
 })();
@@ -57,4 +58,8 @@ async function getCounts() {
   const guru = counts.slice(4, 6);
 
   return { apprentice, guru };
+}
+
+function levelContainerFromName(level) {
+  return document.querySelector(`.srs-progress__stage.srs-progress__stage--${level}`);
 }
